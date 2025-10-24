@@ -1,0 +1,14 @@
+# Core dependencies
+pyyaml>=6.0
+click>=8.0
+pandas>=2.0
+matplotlib>=3.7
+networkx>=3.0
+
+# Testing
+pytest>=7.4
+pytest-cov>=4.1
+
+# Optional: AI features
+sentence-transformers>=2.2  # For AI theme suggestions
+scikit-learn>=1.3          # For clustering and Cohen's kappa
