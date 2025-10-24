@@ -1,0 +1,65 @@
+# templates/qualitative_study.yaml
+name: "Qualitative Study"
+description: "For interviews, focus groups, ethnography, grounded theory, phenomenology"
+
+fields:
+  qualitative_approach:
+    type: select
+    options: [grounded_theory, phenomenology, ethnography, case_study, narrative_analysis, thematic_analysis, discourse_analysis]
+    required: true
+    prompt: "Qualitative methodology"
+
+  sample_size:
+    type: integer
+    prompt: "Number of participants"
+
+  sampling_strategy:
+    type: text
+    prompt: "Sampling approach (copy from Methods)"
+    instruction: "e.g., 'purposive sampling', 'snowball sampling', 'theoretical sampling'"
+
+  participant_characteristics:
+    type: text
+    prompt: "Participant demographics (as described by authors)"
+
+  data_collection:
+    type: text_array
+    prompt: "Data collection methods (copy from Methods)"
+    instruction: "e.g., 'semi-structured interviews', 'focus groups', 'participant observation'"
+
+  interview_topics:
+    type: text_array
+    prompt: "Interview guide topics / questions (if provided)"
+    instruction: "List main topic areas without interpretation"
+
+  analysis_method:
+    type: text
+    prompt: "Analysis approach (copy from Methods)"
+    instruction: "Describe coding process, software used, validation approach"
+
+  main_themes:
+    type: text_array
+    prompt: "Major themes identified (exactly as named by authors)"
+    instruction: "Use authors' theme names verbatim"
+
+  subthemes:
+    type: text_array
+    prompt: "Sub-themes or categories (if reported)"
+
+  representative_quotes:
+    type: text_array
+    prompt: "Exemplar quotes (copy from Results)"
+    instruction: "Include 2-3 representative quotes for key themes"
+
+  authors_interpretation:
+    type: text
+    prompt: "Authors' theoretical interpretation (from Discussion)"
+
+  reflexivity:
+    type: text
+    prompt: "Authors' reflexivity statement (if provided)"
+    instruction: "Note researcher positionality, bias mitigation"
+
+  limitations:
+    type: text_array
+    prompt: "Study limitations (as acknowledged by authors)"

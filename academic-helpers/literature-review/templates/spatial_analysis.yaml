@@ -1,0 +1,62 @@
+# templates/spatial_analysis.yaml
+name: "Spatial Analysis Study"
+description: "For studies using GIS, spatial statistics, or geographic data"
+
+fields:
+  spatial_scale:
+    type: select
+    options: [individual, household, neighborhood, city, region, national, global]
+    required: true
+    prompt: "Geographic scale of analysis"
+
+  geographic_area:
+    type: text
+    required: true
+    prompt: "Study area (location and boundaries)"
+    instruction: "Describe exactly as defined by authors"
+
+  spatial_unit:
+    type: text
+    required: true
+    prompt: "Unit of analysis (e.g., census tract, grid cell, individual address)"
+
+  sample_size_spatial:
+    type: integer
+    prompt: "Number of spatial units analyzed"
+
+  spatial_data_sources:
+    type: text_array
+    prompt: "Data sources (list all datasets used)"
+    instruction: "Include dataset names, years, and providers as cited"
+
+  exposure_variables:
+    type: text_array
+    prompt: "Spatial predictors / exposures (exactly as named)"
+    instruction: "List geographic variables without interpretation"
+
+  outcome_variables:
+    type: text_array
+    prompt: "Outcomes measured (exactly as named)"
+    instruction: "List outcomes without interpretation"
+
+  spatial_methods:
+    type: text_array
+    prompt: "Spatial analysis methods (copy from Methods)"
+    instruction: "e.g., 'Moran's I', 'kernel density estimation', 'geographically weighted regression'"
+
+  main_results:
+    type: text_array
+    prompt: "Key spatial findings (copy exact wording)"
+    instruction: "Include spatial autocorrelation statistics, clustering patterns, spatial associations"
+
+  null_findings:
+    type: text_array
+    prompt: "Non-significant spatial patterns (if any)"
+
+  authors_interpretation:
+    type: text
+    prompt: "Authors' spatial interpretation (from Discussion)"
+
+  limitations:
+    type: text_array
+    prompt: "Spatial limitations (e.g., MAUP, edge effects, data resolution)"

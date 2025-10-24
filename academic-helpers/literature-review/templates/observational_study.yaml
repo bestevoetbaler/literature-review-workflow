@@ -1,0 +1,67 @@
+# templates/observational_study.yaml
+name: "Observational Study"
+description: "For cross-sectional, cohort, case-control, longitudinal, or ecological studies"
+
+fields:
+  study_design:
+    type: select
+    options: [cross_sectional, cohort, case_control, longitudinal, ecological]
+    required: true
+    prompt: "Study design (select one)"
+
+  sample_size:
+    type: integer
+    required: true
+    prompt: "Total sample size (n)"
+
+  population_description:
+    type: text
+    prompt: "Population characteristics (copy from Methods)"
+    instruction: "Describe exactly as authors defined (age, location, inclusion criteria)"
+
+  exposure_variables:
+    type: text_array
+    prompt: "Independent variables / predictors (exactly as named by authors)"
+    instruction: "List each exposure without interpretation. Use authors' exact terminology."
+
+  outcome_variables:
+    type: text_array
+    prompt: "Dependent variables / outcomes (exactly as named by authors)"
+    instruction: "List each outcome without interpretation. Use authors' exact terminology."
+
+  covariates:
+    type: text_array
+    prompt: "Control variables / confounders adjusted for"
+    instruction: "List as authors specified in their statistical models"
+
+  statistical_methods:
+    type: text
+    prompt: "Statistical analysis methods (copy from Methods)"
+    instruction: "Quote or paraphrase statistical approach exactly"
+
+  main_results:
+    type: text_array
+    prompt: "Key findings (copy exact wording when possible)"
+    instruction: "Extract verbatim from Results section. Include effect sizes, p-values, confidence intervals as reported."
+
+  null_findings:
+    type: text_array
+    prompt: "Non-significant or unexpected results (if any)"
+    instruction: "Include findings that did NOT reach statistical significance"
+
+  authors_interpretation:
+    type: text
+    prompt: "Authors' interpretation of findings (from Discussion)"
+    instruction: "Summarize how authors explained their results"
+
+  limitations:
+    type: text_array
+    prompt: "Study limitations (as acknowledged by authors)"
+    instruction: "List limitations authors mentioned in Discussion"
+
+  quality_score:
+    type: integer
+    min: 0
+    max: 10
+    prompt: "Quality assessment score (0-10)"
+    instruction: "Based on review's quality criteria"
