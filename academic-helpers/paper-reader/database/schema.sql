@@ -87,9 +87,7 @@ CREATE VIRTUAL TABLE IF NOT EXISTS papers_fts USING fts5(
     title,
     authors,
     abstract,
-    keywords,
-    content='papers',
-    content_rowid='rowid'
+    keywords
 );
 
 -- Triggers to keep FTS in sync
